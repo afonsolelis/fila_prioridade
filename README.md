@@ -1,1 +1,13 @@
-# fila_prioridade
+## undamentos Teóricos da Fila de Prioridade
+
+## Conceito e Definição
+
+Uma fila de prioridade é uma estrutura de dados que mantém uma coleção de elementos, cada um com uma prioridade associada, permitindo a extração do elemento com maior (ou menor) prioridade independentemente da ordem de inserção [1](https://www.ime.usp.br/~song/mac5710/slides/03prior.pdf)[5](https://www.programiz.com/dsa/priority-queue)[6](https://www.ime.usp.br/~pf/analise_de_algoritmos/aulas/priority.html). Diferentemente das filas convencionais que seguem o princípio FIFO (First-In-First-Out), as filas de prioridade atendem primeiro os elementos com maior prioridade, tornando-as ideais para situações onde certos elementos precisam ser processados antes de outros [2](https://www.estrategiaconcursos.com.br/blog/filas-prioridades-heap-cnu-ti/)[7](https://www.hashtagtreinamentos.com/algoritmo-e-estrutura-de-dados)[8](https://pt.slideshare.net/slideshow/fila-de-prioridades/57022106).
+
+## Propriedades Essenciais
+
+As filas de prioridade possuem duas operações fundamentais: inserção de novos elementos e remoção do elemento de maior prioridade [1](https://www.ime.usp.br/~song/mac5710/slides/03prior.pdf)[3](https://igormcoelho.github.io/curso-estruturas-de-dados-i/slides/7-filas-prioridade/7-filas-prioridade.html)[6](https://www.ime.usp.br/~pf/analise_de_algoritmos/aulas/priority.html). Estas operações devem ser eficientes para garantir o bom desempenho da estrutura em aplicações reais [4](https://pt.wikipedia.org/wiki/Fila_de_prioridade)[5](https://www.programiz.com/dsa/priority-queue). A propriedade principal que deve ser mantida é que o elemento de maior prioridade esteja sempre acessível em tempo constante, independentemente do número de elementos na fila [2](https://www.estrategiaconcursos.com.br/blog/filas-prioridades-heap-cnu-ti/)[6](https://www.ime.usp.br/~pf/analise_de_algoritmos/aulas/priority.html)[7](https://www.hashtagtreinamentos.com/algoritmo-e-estrutura-de-dados).
+
+## Tipos de Filas de Prioridade
+
+Existem dois tipos principais de filas de prioridade: o heap máximo, onde o elemento de maior valor tem prioridade máxima, e o heap mínimo, onde o elemento de menor valor tem prioridade máxima [2](https://www.estrategiaconcursos.com.br/blog/filas-prioridades-heap-cnu-ti/)[5](https://www.programiz.com/dsa/priority-queue)[11](https://www.programiz.com/dsa/heap-data-structure). A escolha entre eles depende da aplicação específica e da definição de prioridade utilizada no contexto do problema [5](https://www.programiz.com/dsa/priority-queue)[7](https://www.hashtagtreinamentos.com/algoritmo-e-estrutura-de-dados)[8](https://pt.slideshare.net/slideshow/fila-de-prioridades/57022106).

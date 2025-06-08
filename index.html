@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmo de Fila de Prioridade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Header com título e controles -->
+        <header class="presentation-header">
+            <h1 class="presentation-title">Algoritmo de Fila de Prioridade</h1>
+            <div class="slide-counter">
+                <span id="current-slide">1</span> / <span id="total-slides">12</span>
+            </div>
+        </header>
+
+        <!-- Container principal dos slides -->
+        <main class="slides-container">
+            <div class="slide-wrapper">
+                <div class="slides" id="slides">
+                    <!-- Slide 1 - Título -->
+                    <div class="slide active" data-slide="1">
+                        <div class="slide-content title-slide">
+                            <h1>Algoritmo de Fila de Prioridade</h1>
+                            <p class="subtitle">Uma estrutura de dados fundamental em Ciência da Computação</p>
+                            <div class="slide-decoration"></div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 - Conceitos Fundamentais -->
+                    <div class="slide" data-slide="2">
+                        <div class="slide-content">
+                            <h2>Conceitos Fundamentais</h2>
+                            <div class="content-section">
+                                <p class="main-text">Fila de prioridade é uma estrutura de dados que organiza elementos de acordo com suas <strong>prioridades</strong>, não pela ordem de chegada como filas normais.</p>
+                                <div class="highlight-box">
+                                    <h4>Diferença Fundamental:</h4>
+                                    <ul>
+                                        <li><strong>Fila Normal (FIFO):</strong> Primeiro a entrar, primeiro a sair</li>
+                                        <li><strong>Fila de Prioridade:</strong> Maior prioridade sai primeiro</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 - Características -->
+                    <div class="slide" data-slide="3">
+                        <div class="slide-content">
+                            <h2>Características e Propriedades</h2>
+                            <div class="content-section">
+                                <p class="main-text">Cada elemento possui uma prioridade associada. O elemento de maior (ou menor) prioridade é sempre atendido primeiro.</p>
+                                <div class="features-grid">
+                                    <div class="feature-card">
+                                        <h4>Ordenação por Prioridade</h4>
+                                        <p>Elementos são organizados por importância</p>
+                                    </div>
+                                    <div class="feature-card">
+                                        <h4>Acesso Eficiente</h4>
+                                        <p>Acesso rápido ao elemento prioritário</p>
+                                    </div>
+                                    <div class="feature-card">
+                                        <h4>Flexibilidade</h4>
+                                        <p>Permite múltiplas implementações</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 - Implementações -->
+                    <div class="slide" data-slide="4">
+                        <div class="slide-content">
+                            <h2>Implementações Possíveis</h2>
+                            <div class="content-section">
+                                <div class="implementation-list">
+                                    <div class="impl-item">
+                                        <h4>Array Ordenado</h4>
+                                        <p>Mantém elementos sempre ordenados</p>
+                                        <span class="complexity">Insert: O(n) | Extract: O(1)</span>
+                                    </div>
+                                    <div class="impl-item">
+                                        <h4>Lista Ligada</h4>
+                                        <p>Inserção na posição correta</p>
+                                        <span class="complexity">Insert: O(n) | Extract: O(1)</span>
+                                    </div>
+                                    <div class="impl-item best">
+                                        <h4>Heap Binário</h4>
+                                        <p>Implementação mais eficiente</p>
+                                        <span class="complexity">Insert: O(log n) | Extract: O(log n)</span>
+                                    </div>
+                                    <div class="impl-item">
+                                        <h4>Árvore de Busca Binária</h4>
+                                        <p>Estrutura balanceada</p>
+                                        <span class="complexity">Insert: O(log n) | Extract: O(log n)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5 - Heap Binário -->
+                    <div class="slide" data-slide="5">
+                        <div class="slide-content">
+                            <h2>Heap Binário</h2>
+                            <div class="content-section">
+                                <p class="main-text">Árvore binária completa que satisfaz a propriedade de heap: cada nó é maior (max-heap) ou menor (min-heap) que seus filhos.</p>
+                                <div class="heap-info">
+                                    <div class="heap-type">
+                                        <h4>Max-Heap</h4>
+                                        <p>Pai ≥ Filhos</p>
+                                        <p>Raiz = Maior Elemento</p>
+                                    </div>
+                                    <div class="heap-type">
+                                        <h4>Min-Heap</h4>
+                                        <p>Pai ≤ Filhos</p>
+                                        <p>Raiz = Menor Elemento</p>
+                                    </div>
+                                </div>
+                                <div class="highlight-box">
+                                    <p><strong>Vantagem:</strong> Implementação eficiente usando array, onde para índice i:</p>
+                                    <ul>
+                                        <li>Pai: (i-1)/2</li>
+                                        <li>Filho esquerdo: 2i+1</li>
+                                        <li>Filho direito: 2i+2</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 6 - Operações -->
+                    <div class="slide" data-slide="6">
+                        <div class="slide-content">
+                            <h2>Operações Básicas</h2>
+                            <div class="content-section">
+                                <div class="operations-grid">
+                                    <div class="operation-card">
+                                        <h4>Insert</h4>
+                                        <p>Adiciona elemento mantendo propriedade heap</p>
+                                    </div>
+                                    <div class="operation-card">
+                                        <h4>Extract-Max/Min</h4>
+                                        <p>Remove e retorna elemento prioritário</p>
+                                    </div>
+                                    <div class="operation-card">
+                                        <h4>Peek/Top</h4>
+                                        <p>Consulta elemento prioritário sem remover</p>
+                                    </div>
+                                    <div class="operation-card">
+                                        <h4>Decrease-Key</h4>
+                                        <p>Diminui prioridade de um elemento</p>
+                                    </div>
+                                    <div class="operation-card">
+                                        <h4>Increase-Key</h4>
+                                        <p>Aumenta prioridade de um elemento</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 7 - Complexidade -->
+                    <div class="slide" data-slide="7">
+                        <div class="slide-content">
+                            <h2>Análise de Complexidade</h2>
+                            <div class="content-section">
+                                <div class="complexity-table">
+                                    <div class="table-header">
+                                        <div>Operação</div>
+                                        <div>Heap Binário</div>
+                                        <div>Array Ordenado</div>
+                                        <div>Lista Ligada</div>
+                                    </div>
+                                    <div class="table-row">
+                                        <div>Insert</div>
+                                        <div class="best">O(log n)</div>
+                                        <div>O(n)</div>
+                                        <div>O(n)</div>
+                                    </div>
+                                    <div class="table-row">
+                                        <div>Extract</div>
+                                        <div class="best">O(log n)</div>
+                                        <div>O(1)</div>
+                                        <div>O(1)</div>
+                                    </div>
+                                    <div class="table-row">
+                                        <div>Peek</div>
+                                        <div class="best">O(1)</div>
+                                        <div>O(1)</div>
+                                        <div>O(1)</div>
+                                    </div>
+                                </div>
+                                <div class="highlight-box">
+                                    <p><strong>Heap Binário oferece o melhor equilíbrio</strong> entre eficiência de inserção e extração.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 8 - Aplicações -->
+                    <div class="slide" data-slide="8">
+                        <div class="slide-content">
+                            <h2>Aplicações Práticas</h2>
+                            <div class="content-section">
+                                <div class="applications-grid">
+                                    <div class="app-card">
+                                        <h4>Sistemas Operacionais</h4>
+                                        <p>Escalonamento de processos por prioridade</p>
+                                    </div>
+                                    <div class="app-card">
+                                        <h4>Algoritmos de Grafos</h4>
+                                        <p>Menor caminho, árvore geradora mínima</p>
+                                    </div>
+                                    <div class="app-card">
+                                        <h4>Simulação de Eventos</h4>
+                                        <p>Ordenação temporal de eventos discretos</p>
+                                    </div>
+                                    <div class="app-card">
+                                        <h4>Compressão de Dados</h4>
+                                        <p>Algoritmos de codificação como Huffman</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 9 - Algoritmos -->
+                    <div class="slide" data-slide="9">
+                        <div class="slide-content">
+                            <h2>Algoritmos que Usam Filas de Prioridade</h2>
+                            <div class="content-section">
+                                <div class="algorithms-list">
+                                    <div class="algo-item">
+                                        <h4>Dijkstra</h4>
+                                        <p>Menor caminho em grafos ponderados</p>
+                                    </div>
+                                    <div class="algo-item">
+                                        <h4>Prim</h4>
+                                        <p>Árvore geradora mínima</p>
+                                    </div>
+                                    <div class="algo-item">
+                                        <h4>Huffman</h4>
+                                        <p>Codificação de dados por frequência</p>
+                                    </div>
+                                    <div class="algo-item">
+                                        <h4>A* (A-Star)</h4>
+                                        <p>Busca informada com heurística</p>
+                                    </div>
+                                    <div class="algo-item">
+                                        <h4>Heapsort</h4>
+                                        <p>Algoritmo de ordenação eficiente</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 10 - Código -->
+                    <div class="slide" data-slide="10">
+                        <div class="slide-content">
+                            <h2>Implementação em Código</h2>
+                            <div class="content-section">
+                                <p class="main-text">Demonstração prática em Java</p>
+                                <div class="code-block">
+                                    <pre><code>import heapq
+
+# Criar uma fila de prioridade (min-heap)
+priority_queue = []
+
+# Inserir elementos (prioridade, valor)
+heapq.heappush(priority_queue, (1, 'Tarefa Urgente'))
+heapq.heappush(priority_queue, (3, 'Tarefa Baixa'))
+heapq.heappush(priority_queue, (2, 'Tarefa Média'))
+
+# Extrair elemento de maior prioridade
+prioridade, tarefa = heapq.heappop(priority_queue)
+print(f"Executando: {tarefa}")  # Tarefa Urgente
+
+# Ver próximo sem remover
+print(priority_queue[0])  # (2, 'Tarefa Média')</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 11 - Exercícios -->
+                    <div class="slide" data-slide="11">
+                        <div class="slide-content">
+                            <h2>Exercícios Práticos</h2>
+                            <div class="content-section">
+                                <div class="exercises-list">
+                                    <div class="exercise-item">
+                                        <h4>Exercício 1</h4>
+                                        <p>Implementar um sistema de prioridades para atendimento médico</p>
+                                    </div>
+                                    <div class="exercise-item">
+                                        <h4>Exercício 2</h4>
+                                        <p>Resolver o problema do menor caminho usando Dijkstra</p>
+                                    </div>
+                                    <div class="exercise-item">
+                                        <h4>Exercício 3</h4>
+                                        <p>Criar um simulador de eventos discretos</p>
+                                    </div>
+                                    <div class="exercise-item">
+                                        <h4>Exercício 4</h4>
+                                        <p>Implementar Heapsort do zero</p>
+                                    </div>
+                                </div>
+                                <div class="highlight-box">
+                                    <p><strong>Dica:</strong> Comece com implementações simples e gradualmente otimize para casos mais complexos.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 12 - Conclusão -->
+                    <div class="slide" data-slide="12">
+                        <div class="slide-content">
+                            <h2>Conclusão</h2>
+                            <div class="content-section">
+                                <p class="main-text">Filas de prioridade são fundamentais para algoritmos eficientes em diversas áreas da computação.</p>
+                                <div class="conclusion-points">
+                                    <div class="point">
+                                        <h4>🎯 Eficiência</h4>
+                                        <p>Heap binário oferece O(log n) para operações principais</p>
+                                    </div>
+                                    <div class="point">
+                                        <h4>🔧 Versatilidade</h4>
+                                        <p>Aplicável em sistemas operacionais, grafos, simulações</p>
+                                    </div>
+                                    <div class="point">
+                                        <h4>📚 Fundamento</h4>
+                                        <p>Base para algoritmos clássicos como Dijkstra e Prim</p>
+                                    </div>
+                                </div>
+                                <div class="final-message">
+                                    <p><strong>Domine filas de prioridade para ser um programador mais eficiente!</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Controles de navegação -->
+        <footer class="navigation-controls">
+            <button class="nav-btn" id="prev-btn" disabled>
+                <span>←</span> Anterior
+            </button>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <button class="nav-btn" id="next-btn">
+                Próximo <span>→</span>
+            </button>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
