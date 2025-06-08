@@ -265,22 +265,24 @@
                             <div class="content-section">
                                 <p class="main-text">Demonstração prática em Java</p>
                                 <div class="code-block">
-                                    <pre><code>import heapq
+                                    <pre><code>public static void main(String[] args) {
+        MaxPriorityQueue pq = new MaxPriorityQueue(10);
 
-# Criar uma fila de prioridade (min-heap)
-priority_queue = []
+        // Inserindo valores
+        pq.insert(15);
+        pq.insert(10);
+        pq.insert(30);
+        pq.insert(20);
+        pq.insert(40);
 
-# Inserir elementos (prioridade, valor)
-heapq.heappush(priority_queue, (1, 'Tarefa Urgente'))
-heapq.heappush(priority_queue, (3, 'Tarefa Baixa'))
-heapq.heappush(priority_queue, (2, 'Tarefa Média'))
+        System.out.println("Maior elemento (peek): " + pq.peek()); // 40
 
-# Extrair elemento de maior prioridade
-prioridade, tarefa = heapq.heappop(priority_queue)
-print(f"Executando: {tarefa}")  # Tarefa Urgente
-
-# Ver próximo sem remover
-print(priority_queue[0])  # (2, 'Tarefa Média')</code></pre>
+        // Extraindo em ordem de prioridade
+        while (!pq.isEmpty()) {
+            System.out.println("Extracted: " + pq.extractMax());
+        }
+        // Saída esperada: 40, 30, 20, 15, 10
+    }</code></pre>
                                 </div>
                             </div>
                         </div>
